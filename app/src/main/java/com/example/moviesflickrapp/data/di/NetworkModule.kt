@@ -28,7 +28,7 @@ object NetworkModule {
     @Provides
     @BaseUrl
     @Singleton
-    fun provideBaseUrl() = ""
+    fun provideBaseUrl() = "https://www.flickr.com/services/rest/"
 
     @Provides
     @Singleton
