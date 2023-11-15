@@ -1,4 +1,7 @@
-package com.example.photoapp.presentation.home
+package com.example.moviesflickrapp.presentation.movies
 
-class UiModel {
-}
+data class PhotoUIModel(
+    val id: String,
+    val title: String,
+    val imageUrl: String
+)
