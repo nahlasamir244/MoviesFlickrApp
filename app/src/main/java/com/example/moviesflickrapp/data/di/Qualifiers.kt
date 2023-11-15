@@ -9,3 +9,7 @@ annotation class ApplicationScope
 @Retention(AnnotationRetention.RUNTIME)
 @Qualifier
 annotation class BaseUrl
+
+@Retention(AnnotationRetention.RUNTIME)
+@Qualifier
+annotation class DatabaseName
