@@ -2,6 +2,7 @@ package com.example.moviesflickrapp.data.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.moviesflickrapp.data.local.dao.MovieDao
 import com.example.moviesflickrapp.data.local.database.MovieAppDatabase
 import dagger.Module
 import dagger.Provides
@@ -32,7 +33,7 @@ class DatabaseModule {
     }
 
     @Provides
-    fun provideMoviesDao(flickrSearchAppDatabase: MovieAppDatabase) =
+    fun provideMoviesDao(flickrSearchAppDatabase: MovieAppDatabase): MovieDao =
         flickrSearchAppDatabase.movieDao()
 
 }

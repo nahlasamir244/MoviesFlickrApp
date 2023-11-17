@@ -2,6 +2,7 @@ package com.example.moviesflickrapp.data.di
 
 import com.example.moviesflickrapp.data.repository.movie.MovieLocalDataSource
 import com.example.moviesflickrapp.data.repository.movie.MovieLocalDataSourceImpl
+import com.example.moviesflickrapp.data.repository.movie.MovieRemoteDataSource
 import com.example.moviesflickrapp.data.repository.movie.MovieRemoteDataSourceImpl
 import com.example.moviesflickrapp.data.repository.movie.MovieRepo
 import com.example.moviesflickrapp.data.repository.movie.MovieRepositoryImpl
@@ -29,11 +30,11 @@ abstract class MovieRemoteDataSourceModule {
     @Binds
     abstract fun bindMovieRemoteDataSource(
         movieRemoteDataSource: MovieRemoteDataSourceImpl
-    ): MovieRemoteDataSourceImpl
+    ): MovieRemoteDataSource
 }
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 abstract class MovieRepositoryModule {
 
     @Binds
