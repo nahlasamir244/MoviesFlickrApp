@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-      <dimen name="fab_margin">16dp</dimen>
-   </resources>
+    <dimen name="row_item_margin_vertical">8dp</dimen>
+    <dimen name="row_item_margin_horizontal">8dp</dimen>
+    <dimen name="photo_title_font_size">24sp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="loading_progress_bar_size">36dp</dimen>
+    <dimen name="error_text_font_size">24sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
