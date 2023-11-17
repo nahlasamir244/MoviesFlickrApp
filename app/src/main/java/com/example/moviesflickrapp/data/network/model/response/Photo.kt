@@ -18,6 +18,6 @@ data class Photo(
     @SerializedName("title") var title: String? = null,
     @SerializedName("ispublic") var isPublic: Int? = null,
     @SerializedName("isfriend") var isFriend: Int? = null,
-    @SerializedName("isfamily") var isFamily: Int? = null
-
+    @SerializedName("isfamily") var isFamily: Int? = null,
+    var rate: Int = (0..5).random()
 ) : Parcelable
