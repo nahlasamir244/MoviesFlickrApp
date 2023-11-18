@@ -2,6 +2,7 @@ package com.example.moviesflickrapp.data.repository.movie
 
 import app.cash.turbine.test
 import com.example.moviesflickrapp.MainCoroutineRule
+import com.example.moviesflickrapp.base.data.ApiException
 import com.example.moviesflickrapp.base.data.Resource
 import com.example.moviesflickrapp.base.utils.NetworkConnectivityHelper
 import com.example.moviesflickrapp.data.network.model.response.MoviesSearchResponse
@@ -68,6 +69,10 @@ class MovieRepositoryTest {
     fun `searchMovies should call MovieRemoteDataSource to get the matched photo list when Internet is Connected and save Result locally`() =
         runTest {
             val response: MoviesSearchResponse = mock()
+            whenever(response.searchResult).doReturn(mock())
+            whenever(response.searchResult?.photoList).doReturn(
+                arrayListOf(mock())
+            )
             whenever(networkConnectivityHelper.isConnected()).doReturn(true)
 
             whenever(movieRemoteDataSource.searchMovies(anyString())).thenReturn(response)
@@ -106,7 +111,7 @@ class MovieRepositoryTest {
             awaitItem() shouldBeInstanceOf Resource.Loading::class.java
             val successResult = awaitItem()
             successResult shouldBeInstanceOf Resource.Success::class.java
-            (successResult as? Resource.Success)?.data shouldBe response
+            (successResult as Resource.Success).data shouldBe response.searchResult?.photoList
             awaitComplete()
         }
     }
@@ -116,7 +121,7 @@ class MovieRepositoryTest {
         whenever(networkConnectivityHelper.isConnected()).doReturn(true)
 
         `when`(movieRemoteDataSource.searchMovies(anyString())).thenThrow(
-            Exception()
+            ApiException(404,"resource not found!")
         )
 
         movieRepository.searchMovies(anyString()).test {
