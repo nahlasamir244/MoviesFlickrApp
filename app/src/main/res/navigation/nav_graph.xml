@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/moviesFragment">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.moviesflickrapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
-
+        android:id="@+id/moviesFragment"
+        android:name="com.example.moviesflickrapp.presentation.movies.MoviesFragment"
+        android:label="moviesFragment"
+        tools:layout="@layout/fragment_movies">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_moviesFragment_to_moviePreviewFragment"
+            app:destination="@id/moviePreviewFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.moviesflickrapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second" >
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+        android:id="@+id/moviePreviewFragment"
+        android:name="com.example.moviesflickrapp.presentation.moviepreview.MoviePreviewFragment"
+        android:label="moviePreviewFragment"
+        tools:layout="@layout/fragment_movie_preview">
+        <argument
+            android:name="movie"
+            android:defaultValue="@null"
+            app:argType="com.example.moviesflickrapp.presentation.movies.PhotoUIModel"
+            app:nullable="true" />
     </fragment>
+
 </navigation>

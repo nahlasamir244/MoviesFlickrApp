@@ -1,4 +1,7 @@
 package com.example.moviesflickrapp.presentation.movies
 
-class MoviesViewModel {
+import androidx.lifecycle.ViewModel
+
+class MoviesViewModel : ViewModel() {
+    // TODO: Implement the ViewModel
 }
