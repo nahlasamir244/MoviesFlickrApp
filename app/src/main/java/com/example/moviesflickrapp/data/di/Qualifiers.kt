@@ -13,3 +13,7 @@ annotation class BaseUrl
 @Retention(AnnotationRetention.RUNTIME)
 @Qualifier
 annotation class DatabaseName
+
+@Retention(AnnotationRetention.RUNTIME)
+@Qualifier
+annotation class IODispatcher
