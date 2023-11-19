@@ -6,7 +6,6 @@ import com.example.moviesflickrapp.base.utils.NetworkConnectivityHelper
 import com.example.moviesflickrapp.data.di.IODispatcher
 import com.example.moviesflickrapp.data.network.model.response.Photo
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
