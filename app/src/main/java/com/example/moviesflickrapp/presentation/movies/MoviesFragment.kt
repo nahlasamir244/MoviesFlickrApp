@@ -10,7 +10,7 @@ import com.example.moviesflickrapp.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MoviesFragment : Fragment() {
+class MoviesFragment : Fragment(), MovieAdapterHandler {
 
     private lateinit var viewModel: MoviesViewModel
 
@@ -25,6 +25,10 @@ class MoviesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onMovieClicked(photoUiModel: PhotoUIModel) {
+        viewModel.invokeAction(MoviesScreenContract.Action.OnMovieClicked(photoUiModel))
     }
 
 }
