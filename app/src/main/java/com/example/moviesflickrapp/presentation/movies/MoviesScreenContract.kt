@@ -17,7 +17,7 @@ sealed class MoviesScreenContract {
 
     sealed class State {
         object Loading : State()
-        data class Success(val photoUIModelList: List<PhotoUIModel>) :
+        data class Success(val uiModelList: List<BaseUIModel>) :
             State()
 
         object EmptySearchResult : State()
@@ -27,7 +27,7 @@ sealed class MoviesScreenContract {
     sealed class Event {
         //to display error toast message
         data class Warning(val message: String) : Event()
-        object NavigateToMoviePreview : Action()
+        object NavigateToMoviePreview : Event()
     }
 }
 

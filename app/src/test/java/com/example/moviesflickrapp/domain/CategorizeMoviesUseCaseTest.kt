@@ -51,7 +51,7 @@ class CategorizeMoviesUseCaseTest {
     private val maximumNumberPerCategory = 3
 
     @Test
-    operator fun invoke() {
+    fun `CategorizeMoviesUseCase should return map of movies categorized by owner`() {
         val useCase = CategorizeMoviesUseCase()
         val categorizedPhotos = useCase(photoList, maximumNumberPerCategory)
         val expectedCategorizedPhotos = mapOf<String?, List<Photo>>(

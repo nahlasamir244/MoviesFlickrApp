@@ -1,8 +1,9 @@
 package com.example.moviesflickrapp.domain
 
 import com.example.moviesflickrapp.data.network.model.response.Photo
+import javax.inject.Inject
 
-class CategorizeMoviesUseCase {
+class CategorizeMoviesUseCase @Inject constructor() {
     operator fun invoke(
         photos: List<Photo>,
         maximumNumberPerCategory: Int
