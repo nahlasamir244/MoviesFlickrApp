@@ -1,4 +1,4 @@
-package com.example.moviesflickrapp.presentation.ext
+package com.example.moviesflickrapp.presentation.util
 
 import android.widget.EditText
 import android.widget.ImageView

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.moviesflickrapp.R
 import com.example.moviesflickrapp.databinding.ItemMovieBinding
 import com.example.moviesflickrapp.databinding.ItemOwnerBinding
-import com.example.moviesflickrapp.presentation.ext.loadImage
+import com.example.moviesflickrapp.presentation.util.loadImage
 
 class MovieAdapter(private val movieAdapterHandler: MovieAdapterHandler) :
     ListAdapter<BaseUIModel, ViewHolder>(MovieDiffUtil()) {
