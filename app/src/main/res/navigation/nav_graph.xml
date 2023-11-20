@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/moviesFragment">
     <fragment
         android:id="@+id/moviesFragment"
@@ -17,12 +16,6 @@
         android:id="@+id/moviePreviewFragment"
         android:name="com.example.moviesflickrapp.presentation.moviepreview.MoviePreviewFragment"
         android:label="moviePreviewFragment"
-        tools:layout="@layout/fragment_movie_preview">
-        <argument
-            android:name="movie"
-            android:defaultValue="@null"
-            app:argType="com.example.moviesflickrapp.presentation.movies.PhotoUIModel"
-            app:nullable="true" />
-    </fragment>
+        tools:layout="@layout/fragment_movie_preview" />
 
 </navigation>
