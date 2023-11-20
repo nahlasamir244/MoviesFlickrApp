@@ -32,6 +32,7 @@ class MoviesViewModel @Inject constructor(
     override fun invokeAction(action: MoviesScreenContract.Action) {
         when (action) {
             is MoviesScreenContract.Action.OnMovieClicked -> {
+                selectedMovie = action.photoUIModel.copy()
                 moviesEvent.postValue(MoviesScreenContract.Event.NavigateToMoviePreview)
             }
 

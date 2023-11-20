@@ -60,7 +60,7 @@ class MovieAdapter(private val movieAdapterHandler: MovieAdapterHandler) :
 
         init {
             itemMovieBinding.apply {
-                imageViewPhotoImage.setOnClickListener {
+                root.setOnClickListener {
                     val currentPosition = layoutPosition
                     if (currentPosition != RecyclerView.NO_POSITION) {
                         (getItem(currentPosition) as? PhotoUIModel)?.let { photoUIModel ->
